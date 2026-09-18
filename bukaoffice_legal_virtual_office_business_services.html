@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BukaOffice.com - Solusi Bagi Anda Yang Ingin Membuka Usaha</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bukaBlue: {
+                            50: '#eef6ff',
+                            100: '#d9eafe',
+                            500: '#1d63ed',
+                            600: '#0f4296',
+                            700: '#0b3478',
+                            800: '#0a2b61',
+                            900: '#071d42'
+                        },
+                        bukaYellow: {
+                            300: '#ffe169',
+                            400: '#ffcb05',
+                            500: '#e6b400',
+                            600: '#cc9e00'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Segoe UI', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .bg-buka-hero {
+            background: linear-gradient(135deg, #0b3478 0%, #0f4296 50%, #1d63ed 100%);
+        }
+        .buka-shadow {
+            box-shadow: 0 10px 30px -5px rgba(15, 66, 150, 0.12);
+        }
+        .card-pill-btn {
+            background: linear-gradient(180deg, #1d63ed 0%, #0f4296 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-bukaYellow-400 selection:text-slate-900">
+
+    <!-- Header Navigation -->
+    <header class="bg-bukaBlue-800 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-white px-3 py-1.5 rounded-md flex items-center gap-1 shadow-sm">
+                    <div class="w-6 h-6 bg-bukaYellow-400 rounded flex items-center justify-center font-black text-bukaBlue-800 text-sm">B</div>
+                    <span class="text-xl font-extrabold text-bukaBlue-800 tracking-tight">Buka<span class="text-bukaYellow-500">Office</span></span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-100">
+                <a href="#" class="hover:text-bukaYellow-400 transition-colors">Beranda</a>
+                <a href="#tentang" class="hover:text-bukaYellow-400 transition-colors">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-bukaYellow-400 transition-colors">Layanan Kami</a>
+                <a href="#kbli" onclick="openKbliModal(); return false;" class="text-bukaYellow-400 hover:text-white transition-colors flex items-center gap-1">
+                    <span>KBLI</span>
+                    <span class="bg-bukaYellow-400 text-slate-900 text-[10px] font-extrabold px-1.5 py-0.5 rounded uppercase">2020</span>
+                </a>
+                <a href="#faq" class="hover:text-bukaYellow-400 transition-colors">FAQ</a>
+                <a href="#kontak" class="hover:text-bukaYellow-400 transition-colors">Hubungi Kami</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bukaBlue-900 border-t border-bukaBlue-700 px-4 py-4 space-y-3 text-sm font-medium">
+            <a href="#" class="block py-2 text-white hover:text-bukaYellow-400">Beranda</a>
+            <a href="#tentang" class="block py-2 text-white hover:text-bukaYellow-400">Tentang Kami</a>
+            <a href="#layanan" class="block py-2 text-white hover:text-bukaYellow-400">Layanan Kami</a>
+            <a href="#kbli" onclick="openKbliModal(); document.getElementById('mobile-menu').classList.add('hidden'); return false;" class="block py-2 text-bukaYellow-400 font-bold hover:text-white">KBLI 2020 (Cek Kode Usaha)</a>
+            <a href="#faq" class="block py-2 text-white hover:text-bukaYellow-400">FAQ</a>
+            <a href="#kontak" class="block py-2 text-white hover:text-bukaYellow-400">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="bg-buka-hero text-white relative overflow-hidden py-12 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left Hero Text Content -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                        Selamat Datang <br>
+                        di <span class="text-white">BukaOffice.com</span>
+                    </h1>
+
+                    <p class="text-blue-100 text-base sm:text-lg max-w-xl font-medium leading-relaxed mx-auto lg:mx-0">
+                        Solusi bagi Anda yang ingin membuka usaha secara legal, cepat, dan profesional di Indonesia.
+                    </p>
+
+                    <div class="pt-2">
+                        <button onclick="openConsultModal('Konsultasi Pendirian PT/CV')" class="bg-bukaYellow-400 hover:bg-bukaYellow-300 text-slate-900 font-extrabold px-8 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2 text-base">
+                            <span>Konsultasi Sekarang</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Hero Illustration Card -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="w-full max-w-lg bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-2xl relative">
+                        <!-- Vector Graphic Illustration Representation -->
+                        <div class="bg-gradient-to-br from-slate-100 to-blue-50 rounded-xl p-6 text-slate-800 shadow-inner relative overflow-hidden min-h-[300px] flex flex-col justify-between">
+                            
+                            <!-- Office Environment Mock Illustration -->
+                            <div class="flex justify-between items-start border-b border-slate-200 pb-4">
+                                <div class="space-y-1">
+                                    <div class="w-16 h-2 bg-bukaBlue-600 rounded"></div>
+                                    <div class="w-24 h-2 bg-slate-300 rounded"></div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-bukaYellow-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-briefcase text-slate-900"></i></div>
+                                    <div class="w-8 h-8 rounded-full bg-bukaBlue-500 text-white flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-building"></i></div>
+                                </div>
+                            </div>
+
+                            <div class="my-6 grid grid-cols-2 gap-4 items-center">
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                                    <i class="fa-solid fa-file-contract text-3xl text-bukaBlue-600 mb-2"></i>
+                                    <div class="text-xs font-bold text-slate-900">Legalitas PT & CV</div>
+                                    <div class="text-[10px] text-slate-500 mt-1">Lengkap & Resmi</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                                    <i class="fa-solid fa-map-location-dot text-3xl text-emerald-500 mb-2"></i>
+                                    <div class="text-xs font-bold text-slate-900">Virtual Office</div>
+                                    <div class="text-[10px] text-slate-500 mt-1">Alamat Prestisius</div>
+                                </div>
+                            </div>
+
+                            <div class="bg-bukaBlue-800 text-white p-3 rounded-lg text-center text-xs font-semibold flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-circle-check text-bukaYellow-400"></i>
+                                <span>Proses Instan & Terbukti oleh 800+ Klien</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Sub-text Section -->
+    <section class="py-10 bg-slate-50 text-center border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+                BukaOffice hadir sebagai mitra bisnis terpercaya Anda baik pendirian PT, CV, Virtual Office, maupun pendaftaran merek usaha dengan pelayanan yang mudah, cepat, dan transparan bagi setiap klien kami.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section: Mengapa Harus Mendirikan Perusahaan -->
+    <section id="tentang" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-bukaYellow-500 mb-6">
+                Mengapa Harus Mendirikan Perusahaan ?
+            </h2>
+
+            <!-- Bullet List Box -->
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-left shadow-sm space-y-4 text-slate-700 text-sm sm:text-base font-semibold">
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-bukaBlue-600 mt-1 text-lg"></i>
+                    <span>Mengembangkan bisnis menjadi lebih profesional dan skala lebih besar.</span>
+                </div>
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-bukaBlue-600 mt-1 text-lg"></i>
+                    <span>Memudahkan dalam memperoleh pendanaan, fasilitas perbankan, & investor.</span>
+                </div>
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-bukaBlue-600 mt-1 text-lg"></i>
+                    <span>Memudahkan mengikuti tender resmi & kerjasama bisnis antar perusahaan.</span>
+                </div>
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-bukaBlue-600 mt-1 text-lg"></i>
+                    <span>Meningkatkan perlindungan hukum dan kepercayaan dari konsumen.</span>
+                </div>
+            </div>
+
+            <p class="text-bukaBlue-600 font-bold text-sm sm:text-base mt-10 max-w-2xl mx-auto leading-relaxed">
+                Jasa yang kami siapkan dan berikan kepada kamu ada dibawah ini, Klik dan dapatkan solusi kebutuhan kamu sekarang juga dibawah ini:
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Section: Jasa Layanan Kami (5 Layanan Utama) -->
+    <section id="layanan" class="py-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                
+                <!-- Service 1: Pendirian Usaha Perorangan -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 buka-shadow text-center flex flex-col justify-between hover:border-bukaBlue-500 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-sky-50 rounded-2xl flex items-center justify-center text-bukaBlue-600">
+                            <i class="fa-solid fa-user-gear text-3xl"></i>
+                        </div>
+                        <h3 class="text-base font-extrabold text-bukaBlue-600 mb-2">
+                            Pendirian Usaha Perorangan
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Pengurusan PT Perorangan untuk UMKM dengan legalitas resmi, akta, dan NIB OSS secara cepat & instan.
+                        </p>
+                    </div>
+                    <button onclick="openConsultModal('Pesan Pendirian Usaha Perorangan')" class="w-full bg-bukaBlue-600 hover:bg-bukaBlue-700 text-white font-bold py-2.5 rounded-xl transition-colors text-[11px] uppercase tracking-wider">
+                        Pesan Layanan Ini
+                    </button>
+                </div>
+
+                <!-- Service 2: Pendirian PT dan CV -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 buka-shadow text-center flex flex-col justify-between hover:border-bukaBlue-500 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-blue-50 rounded-2xl flex items-center justify-center text-bukaBlue-600">
+                            <i class="fa-solid fa-building text-3xl"></i>
+                        </div>
+                        <h3 class="text-base font-extrabold text-bukaBlue-600 mb-2">
+                            Pendirian PT dan CV
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Membantu pendirian PT Umum dan CV persekutuan dengan proses aman, transparan, terpercaya, dan tuntas.
+                        </p>
+                    </div>
+                    <button onclick="openConsultModal('Pesan Pendirian PT dan CV')" class="w-full bg-bukaBlue-600 hover:bg-bukaBlue-700 text-white font-bold py-2.5 rounded-xl transition-colors text-[11px] uppercase tracking-wider">
+                        Pesan Layanan Ini
+                    </button>
+                </div>
+
+                <!-- Service 3: Desain Logo -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 buka-shadow text-center flex flex-col justify-between hover:border-bukaBlue-500 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-amber-50 rounded-2xl flex items-center justify-center text-bukaYellow-500">
+                            <i class="fa-solid fa-palette text-3xl"></i>
+                        </div>
+                        <h3 class="text-base font-extrabold text-bukaBlue-600 mb-2">
+                            Desain Logo
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Membuat desain logo profesional & brand identity eksklusif untuk memperkuat identitas brand usaha Anda.
+                        </p>
+                    </div>
+                    <button onclick="openConsultModal('Pesan Desain Logo')" class="w-full bg-bukaBlue-600 hover:bg-bukaBlue-700 text-white font-bold py-2.5 rounded-xl transition-colors text-[11px] uppercase tracking-wider">
+                        Pesan Layanan Ini
+                    </button>
+                </div>
+
+                <!-- Service 4: Pendaftaran Merek -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 buka-shadow text-center flex flex-col justify-between hover:border-bukaBlue-500 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600">
+                            <i class="fa-solid fa-registered text-3xl"></i>
+                        </div>
+                        <h3 class="text-base font-extrabold text-bukaBlue-600 mb-2">
+                            Pendaftaran Merek
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Perlindungan hukum Hak Kekayaan Intelektual (HKI) dan pendaftaran merek dagang usaha resmi di DJKI.
+                        </p>
+                    </div>
+                    <button onclick="openConsultModal('Pesan Pendaftaran Merek')" class="w-full bg-bukaBlue-600 hover:bg-bukaBlue-700 text-white font-bold py-2.5 rounded-xl transition-colors text-[11px] uppercase tracking-wider">
+                        Pesan Layanan Ini
+                    </button>
+                </div>
+
+                <!-- Service 5: Pajak dan Akuntansi -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 buka-shadow text-center flex flex-col justify-between hover:border-bukaBlue-500 transition-all hover:-translate-y-1">
+                    <div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600">
+                            <i class="fa-solid fa-calculator text-3xl"></i>
+                        </div>
+                        <h3 class="text-base font-extrabold text-bukaBlue-600 mb-2">
+                            Pajak dan Akuntansi
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Laporan keuangan, pembukuan akuntansi, dan pengelolaan pelaporan pajak bulanan/tahunan teratur.
+                        </p>
+                    </div>
+                    <button onclick="openConsultModal('Pesan Pajak dan Akuntansi')" class="w-full bg-bukaBlue-600 hover:bg-bukaBlue-700 text-white font-bold py-2.5 rounded-xl transition-colors text-[11px] uppercase tracking-wider">
+                        Pesan Layanan Ini
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Kenapa Harus Memilih Kami -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-bukaYellow-500 mb-12">
+                Kenapa harus memilih kami?
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Advantage 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="card-pill-btn text-white font-extrabold text-base py-3 px-6 rounded-full inline-block mb-4 shadow-md w-full max-w-[220px]">
+                        Berpengalaman
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        BukaOffice telah memiliki pengalaman yang cukup dalam menangani tim legal profesional di bidang legalitas perusahaan, akuntansi, dan perpajakan.
+                    </p>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="card-pill-btn text-white font-extrabold text-base py-3 px-6 rounded-full inline-block mb-4 shadow-md w-full max-w-[220px]">
+                        Layanan Terbaik
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        BukaOffice memberikan kualitas terbaik dan respon cepat demi kepuasan pelanggan secara menyeluruh.
+                    </p>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <div class="card-pill-btn text-white font-extrabold text-base py-3 px-6 rounded-full inline-block mb-4 shadow-md w-full max-w-[220px]">
+                        Solusi Berkelanjutan
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        BukaOffice menyediakan solusi lengkap dan berkelanjutan bagi bisnis Anda dari pendirian hingga operasional pengerjaan pajak.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section: Testimoni Klien Kami -->
+    <section class="py-16 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-bukaYellow-500 text-center mb-12">
+                Testimoni Klien Kami
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-quote-left text-3xl text-bukaBlue-500 opacity-30 mb-3"></i>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic mb-4">
+                            "Terima kasih BukaOffice telah membantu kami mendirikan PT dan CV baru. Paket komplit, pelayanan cepat dan harga terjangkau."
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3">
+                        <div class="font-bold text-xs text-slate-900">Rizky Dharmawan</div>
+                        <div class="text-[10px] text-slate-500">PT Digital Media Nusantara</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-quote-left text-3xl text-bukaBlue-500 opacity-30 mb-3"></i>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic mb-4">
+                            "BukaOffice memang paling terbaik dan cepat. Semua pengurusan terurus dengan sangat rapih."
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3">
+                        <div class="font-bold text-xs text-slate-900">Siti Amalia</div>
+                        <div class="text-[10px] text-slate-500">Founder Studio Kreatif</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-quote-left text-3xl text-bukaBlue-500 opacity-30 mb-3"></i>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic mb-4">
+                            "Terima kasih PT Solusi Administrasi Tuntas. Dengan BukaOffice pengerjaan PT saya sangat cepat, tidak ada kendala. Terima kasih atas layanan terbaiknya!"
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3">
+                        <div class="font-bold text-xs text-slate-900">A. Hidayat</div>
+                        <div class="text-[10px] text-slate-500">Direktur Utama</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-quote-left text-3xl text-bukaBlue-500 opacity-30 mb-3"></i>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed italic mb-4">
+                            "Pelayanan sangat cepat, fast respons via WhatsApp. Sangat membantu pengusaha pemula seperti saya yang ingin buat PT tanpa pusing urus berkas."
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3">
+                        <div class="font-bold text-xs text-slate-900">Budi Hendrawan</div>
+                        <div class="text-[10px] text-slate-500">Owner Kuliner Group</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Metrics / Stats Bar -->
+    <section class="py-12 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                
+                <div>
+                    <div class="text-3xl sm:text-5xl font-extrabold text-bukaBlue-600">800+</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Klien Kami Puas</div>
+                </div>
+
+                <div>
+                    <div class="text-3xl sm:text-5xl font-extrabold text-bukaBlue-600">5+</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Tahun Pengalaman</div>
+                </div>
+
+                <div>
+                    <div class="text-3xl sm:text-5xl font-extrabold text-bukaBlue-600">100%</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Data Terjamin Aman</div>
+                </div>
+
+                <div>
+                    <div class="text-3xl sm:text-5xl font-extrabold text-bukaBlue-600">24<span class="text-2xl sm:text-3xl">Jam</span></div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Chat WA Aktif</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Pertanyaan FAQ -->
+    <section id="faq" class="py-16 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-bukaBlue-600">
+                    Pertanyaan FAQ
+                </h2>
+                <button onclick="openConsultModal('Konsultasi FAQ')" class="bg-bukaYellow-400 hover:bg-bukaYellow-300 text-slate-900 font-extrabold px-6 py-2.5 rounded-lg shadow transition-colors text-sm">
+                    Hubungi Kami
+                </button>
+            </div>
+
+            <div class="space-y-3">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(1)" class="w-full text-left p-4 font-bold text-slate-800 text-xs sm:text-sm flex items-center justify-between focus:outline-none">
+                        <span>1. Apa saja syarat pendirian PT?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-bukaBlue-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        Persyaratan utama: Foto KTP & NPWP Pengurus/Pemegang Saham, Calon Nama PT (minimal 3 kata dalam Bahasa Indonesia), serta Rencana Bidang Usaha (KBLI).
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(2)" class="w-full text-left p-4 font-bold text-slate-800 text-xs sm:text-sm flex items-center justify-between focus:outline-none">
+                        <span>2. Berapa lama proses pembuatan PT, CV dan Merek?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-bukaBlue-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        Proses PT Perorangan rampung 1-2 hari kerja. PT Umum & CV membutuhkan sekitar 5-7 hari kerja. Pendaftaran merek diajukan di hari yang sama.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(3)" class="w-full text-left p-4 font-bold text-slate-800 text-xs sm:text-sm flex items-center justify-between focus:outline-none">
+                        <span>3. Bagaimana cara memesan layanan PT?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-bukaBlue-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-3" class="hidden p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        Cukup hubungi tim konsultan kami via WhatsApp, isi formulir data awal, dan tim legal kami akan mengurus seluruh berkas Anda hingga tuntas.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(4)" class="w-full text-left p-4 font-bold text-slate-800 text-xs sm:text-sm flex items-center justify-between focus:outline-none">
+                        <span>4. Apakah bisa berkonsultasi mengenai zonasi domisili dan NPWP?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-bukaBlue-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-4" class="hidden p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        Ya, kami memberikan konsultasi gratis mengenai penentuan zonasi usaha komersial dan Virtual Office agar sesuai dengan izin OSS RBA dan perpajakan.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(5)" class="w-full text-left p-4 font-bold text-slate-800 text-xs sm:text-sm flex items-center justify-between focus:outline-none">
+                        <span>5. Apakah layanan di BukaOffice bergaransi resmi?</span>
+                        <i id="faq-icon-5" class="fa-solid fa-chevron-down text-bukaBlue-600 transition-transform"></i>
+                    </button>
+                    <div id="faq-ans-5" class="hidden p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                        Ya, seluruh dokumen legalitas yang terbit disahkan oleh Notaris, Kemenkumham, serta Portal Resmi OSS RBA Pemerintah Indonesia.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section: Hubungi Kami / Contact Us -->
+    <section id="kontak" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-bukaBlue-50 text-bukaBlue-600 font-extrabold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3 border border-bukaBlue-100">
+                    Respon Cepat & Ramah
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Hubungi <span class="text-bukaBlue-600">Kami</span>
+                </h2>
+                <p class="text-slate-600 text-xs sm:text-sm font-medium mt-3 leading-relaxed">
+                    Punya pertanyaan seputar legalitas, pendirian usaha, atau butuh penawaran resmi? Tim konsultan legal BukaOffice siap membantu Anda.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Column: Contact Cards & Office Details -->
+                <div class="lg:col-span-5 space-y-4">
+                    
+                    <!-- Contact Item 1: WhatsApp & Phone -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex items-start gap-4 hover:border-bukaBlue-500 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-2xl flex-shrink-0 shadow-md">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Customer Service / WA</div>
+                            <a href="https://wa.me/6281586868187?text=Halo%20BukaOffice,%20saya%20ingin%20konsultasi%20layanan%20usaha" target="_blank" class="text-base font-extrabold text-slate-900 hover:text-bukaBlue-600 transition-colors block mt-0.5">
+                                0815-8686-8187
+                            </a>
+                            <p class="text-[11px] text-slate-500 mt-1">Konsultasi cepat via WhatsApp 24 Jam</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Item 2: Email -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex items-start gap-4 hover:border-bukaBlue-500 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-bukaBlue-600 text-white flex items-center justify-center text-xl flex-shrink-0 shadow-md">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Email Resmi</div>
+                            <a href="mailto:info@bukaoffice.com" class="text-sm font-extrabold text-slate-900 hover:text-bukaBlue-600 transition-colors block mt-0.5">
+                                info@bukaoffice.com
+                            </a>
+                            <p class="text-[11px] text-slate-500 mt-1">Kirimkan penawaran atau surat dokumen</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Item 3: Office Address -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 flex items-start gap-4 hover:border-bukaBlue-500 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-bukaYellow-400 text-slate-900 flex items-center justify-center text-xl flex-shrink-0 shadow-md">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Alamat Kantor Operasional</div>
+                            <p class="text-xs font-bold text-slate-800 mt-1 leading-relaxed">
+                                Belleza BSA Lantai 1 Unit 106, Jl. Letjen Soepeno, Kebayoran Lama, Jakarta Selatan 12210
+                            </p>
+                            <p class="text-[11px] text-slate-500 mt-1">PT Solusi Administrasi Tuntas</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Item 4: Operational Hours -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-5 border border-slate-800 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-regular fa-clock text-bukaYellow-400 text-xl"></i>
+                            <div>
+                                <div class="text-xs font-bold text-white">Jam Operasional Kantor</div>
+                                <div class="text-[11px] text-slate-400">Senin - Jumat: 08:30 - 17:00 WIB</div>
+                            </div>
+                        </div>
+                        <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            WA 24 Jam
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Interactive Quick Message Form -->
+                <div class="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-extrabold text-slate-900">Kirim Pesan Langsung</h3>
+                        <p class="text-xs text-slate-500 mt-1">Isi formulir di bawah ini dan pesan Anda akan langsung terkirim ke Tim Konsultan BukaOffice.</p>
+                    </div>
+
+                    <form onsubmit="handleDirectContactSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Nama Lengkap <span class="text-red-500">*</span></label>
+                                <input type="text" id="contact-name" required placeholder="Contoh: Budi Santoso" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bukaBlue-500 font-medium">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">Nomor WhatsApp <span class="text-red-500">*</span></label>
+                                <input type="tel" id="contact-phone" required placeholder="Contoh: 08123456789" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bukaBlue-500 font-medium">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Layanan Yang Diminati</label>
+                            <select id="contact-service" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bukaBlue-500 font-medium">
+                                <option value="Pendirian Usaha Perorangan">Pendirian Usaha Perorangan</option>
+                                <option value="Pendirian PT dan CV">Pendirian PT dan CV</option>
+                                <option value="Desain Logo">Desain Logo</option>
+                                <option value="Pendaftaran Merek (HKI)">Pendaftaran Merek (HKI)</option>
+                                <option value="Pajak dan Akuntansi">Pajak dan Akuntansi</option>
+                                <option value="Konsultasi Umum Legalitas Usaha">Konsultasi Umum Legalitas Usaha</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5">Pesan / Pertanyaan <span class="text-red-500">*</span></label>
+                            <textarea id="contact-message" rows="4" required placeholder="Tuliskan detail kebutuhan atau pertanyaan rencana usaha Anda di sini..." class="w-full bg-white border border-slate-300 rounded-xl p-3.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bukaBlue-500 font-medium"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-bukaBlue-600 hover:bg-bukaBlue-700 text-white font-extrabold py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Kirim Pesan Ke WhatsApp BukaOffice</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-white px-2.5 py-1 rounded flex items-center gap-1">
+                            <div class="w-5 h-5 bg-bukaYellow-400 rounded flex items-center justify-center font-black text-bukaBlue-800 text-xs">B</div>
+                            <span class="text-base font-extrabold text-bukaBlue-800 tracking-tight">Buka<span class="text-bukaYellow-500">Office</span></span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Layanan legalitas usaha, pendirian PT & CV, Virtual Office, Hak Merek, serta Konsultasi Perpajakan Terpercaya di Indonesia.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        <div class="font-bold text-slate-200">PT Solusi Administrasi Tuntas</div>
+                        <div>Belleza BSA Lantai 1 Unit 106, Kebayoran Lama, Jakarta Selatan</div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3 uppercase tracking-wider text-bukaYellow-400">Navigasi</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#layanan" class="hover:text-white transition-colors">Layanan Kami</a></li>
+                        <li><a href="#kbli" onclick="openKbliModal(); return false;" class="text-bukaYellow-400 hover:text-white transition-colors">Cek KBLI 2020</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#kontak" class="hover:text-white transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Layanan Kami -->
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3 uppercase tracking-wider text-bukaYellow-400">Layanan Kami</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><a href="#layanan" onclick="openConsultModal('Pendirian Usaha Perorangan')" class="hover:text-white transition-colors">Pendirian Usaha Perorangan</a></li>
+                        <li><a href="#layanan" onclick="openConsultModal('Pendirian PT dan CV')" class="hover:text-white transition-colors">Pendirian PT dan CV</a></li>
+                        <li><a href="#layanan" onclick="openConsultModal('Desain Logo')" class="hover:text-white transition-colors">Desain Logo Usaha</a></li>
+                        <li><a href="#layanan" onclick="openConsultModal('Pendaftaran Merek')" class="hover:text-white transition-colors">Pendaftaran Merek (HKI)</a></li>
+                        <li><a href="#layanan" onclick="openConsultModal('Pajak dan Akuntansi')" class="hover:text-white transition-colors">Laporan Pajak & Akuntansi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Certifications -->
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3 uppercase tracking-wider text-bukaYellow-400">Resmi & Terdaftar</h4>
+                    <p class="text-slate-400 text-xs mb-3">Seluruh pengurusan dilakukan sesuai standar hukum Kementerian Hukum & HAM RI serta Portal OSS RBA.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 font-semibold px-2.5 py-1 rounded text-[10px]">OSS RBA Ready</span>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 font-semibold px-2.5 py-1 rounded text-[10px]">Kemenkumham RI</span>
+                        <span class="bg-slate-800 border border-slate-700 text-slate-300 font-semibold px-2.5 py-1 rounded text-[10px]">DJKI Merek</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-400 text-[11px] gap-2">
+                <div>&copy; 2026 BukaOffice.com - PT Solusi Administrasi Tuntas. Hak Cipta Dilindungi.</div>
+                <div class="flex items-center gap-4">
+                    <a href="#kontak" class="hover:text-white">Syarat & Ketentuan</a>
+                    <span>&bull;</span>
+                    <a href="#kontak" class="hover:text-white">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- KBLI Search Modal -->
+    <div id="kbli-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-100 max-h-[90vh] flex flex-col">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+                <div class="flex items-center gap-2">
+                    <div class="bg-bukaBlue-600 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div>
+                        <h3 class="text-base font-extrabold text-slate-900">Cek Kode KBLI 2020 (Klasifikasi Usaha)</h3>
+                        <p class="text-[11px] text-slate-500">Cari kode KBLI untuk pendirian PT, CV, atau NIB OSS Anda</p>
+                    </div>
+                </div>
+                <button onclick="closeKbliModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold p-1">&times;</button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="mb-4">
+                <input type="text" id="kbli-search-input" onkeyup="filterKbliCodes()" placeholder="Ketik jenis usaha Anda (misal: Perdagangan, Restoran, Software, Advertising)..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bukaBlue-500 font-medium">
+            </div>
+
+            <!-- KBLI Items List Container -->
+            <div class="overflow-y-auto space-y-3 flex-1 pr-1" id="kbli-list">
+                
+                <div class="kbli-item bg-slate-50 border border-slate-200 rounded-xl p-3 hover:border-bukaBlue-500 transition-all cursor-pointer" onclick="selectKbliItem('62019 - Pemrograman Komputer Lainnya / Software & IT')">
+                    <div class="flex justify-between items-start">
+                        <span class="font-extrabold text-bukaBlue-600 bg-blue-100 px-2 py-0.5 rounded text-[11px]">KBLI 62019</span>
+                        <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">Resiko Rendah</span>
+                    </div>
+                    <div class="font-bold text-slate-800 mt-1.5">Pemrograman Komputer / Konsultan Software</div>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Jasa pembuatan aplikasi, website, sistem IT, dan konsultasi perangkat lunak.</p>
+                </div>
+
+                <div class="kbli-item bg-slate-50 border border-slate-200 rounded-xl p-3 hover:border-bukaBlue-500 transition-all cursor-pointer" onclick="selectKbliItem('47911 - Perdagangan E-Commerce / Online Shop')">
+                    <div class="flex justify-between items-start">
+                        <span class="font-extrabold text-bukaBlue-600 bg-blue-100 px-2 py-0.5 rounded text-[11px]">KBLI 47911</span>
+                        <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">Resiko Rendah</span>
+                    </div>
+                    <div class="font-bold text-slate-800 mt-1.5">Perdagangan E-Commerce / Toko Online</div>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Penjualan barang retail melalui internet, marketplace, dan media sosial.</p>
+                </div>
+
+                <div class="kbli-item bg-slate-50 border border-slate-200 rounded-xl p-3 hover:border-bukaBlue-500 transition-all cursor-pointer" onclick="selectKbliItem('70209 - Aktivitas Konsultasi Manajemen Lainnya')">
+                    <div class="flex justify-between items-start">
+                        <span class="font-extrabold text-bukaBlue-600 bg-blue-100 px-2 py-0.5 rounded text-[11px]">KBLI 70209</span>
+                        <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">Resiko Rendah</span>
+                    </div>
+                    <div class="font-bold text-slate-800 mt-1.5">Konsultasi Manajemen & Bisnis</div>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Bantuan nasihat, bimbingan, dan operasional strategi bisnis perusahaan.</p>
+                </div>
+
+                <div class="kbli-item bg-slate-50 border border-slate-200 rounded-xl p-3 hover:border-bukaBlue-500 transition-all cursor-pointer" onclick="selectKbliItem('56101 - Restoran Dan Rumah Makan')">
+                    <div class="flex justify-between items-start">
+                        <span class="font-extrabold text-bukaBlue-600 bg-blue-100 px-2 py-0.5 rounded text-[11px]">KBLI 56101</span>
+                        <span class="text-[10px] text-amber-600 font-bold bg-amber-50 px-1.5 py-0.5 rounded">Resiko Menengah</span>
+                    </div>
+                    <div class="font-bold text-slate-800 mt-1.5">Restoran Dan Rumah Makan</div>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Usaha penyediaan makanan dan minuman untuk umum di tempat tetap.</p>
+                </div>
+
+                <div class="kbli-item bg-slate-50 border border-slate-200 rounded-xl p-3 hover:border-bukaBlue-500 transition-all cursor-pointer" onclick="selectKbliItem('73100 - Periklanan / Agency Advertising')">
+                    <div class="flex justify-between items-start">
+                        <span class="font-extrabold text-bukaBlue-600 bg-blue-100 px-2 py-0.5 rounded text-[11px]">KBLI 73100</span>
+                        <span class="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">Resiko Rendah</span>
+                    </div>
+                    <div class="font-bold text-slate-800 mt-1.5">Periklanan (Advertising & Agency)</div>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Jasa pembuatan kampanye iklan, media sosial, digital marketing, dan branding.</p>
+                </div>
+
+            </div>
+
+            <!-- Footer CTA -->
+            <div class="border-t border-slate-200 pt-3 mt-3 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Bingung menentukan KBLI usaha Anda?</span>
+                <button onclick="closeKbliModal(); openConsultModal('Konsultasi Penentuan Kode KBLI Usaha');" class="bg-bukaYellow-400 hover:bg-bukaYellow-300 text-slate-900 font-extrabold px-4 py-2 rounded-lg text-xs shadow transition-colors">
+                    Tanya Tim Legal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Consultation Modal -->
+    <div id="consult-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 relative">
+            <button onclick="closeConsultModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+            
+            <div class="text-center mb-5">
+                <div class="w-12 h-12 bg-bukaYellow-400 text-slate-900 rounded-full flex items-center justify-center mx-auto mb-2 text-xl shadow-sm">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 class="text-lg font-extrabold text-slate-900">Konsultasi Layanan BukaOffice</h3>
+                <p class="text-xs text-slate-500 mt-1">Isi data di bawah untuk terhubung langsung dengan Konsultasi Legal BukaOffice via WhatsApp.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Layanan Diminati</label>
+                    <input type="text" id="modal-service" readonly class="w-full bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2 text-xs font-extrabold text-bukaBlue-600">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                    <input type="text" id="modal-name" required placeholder="Contoh: Budi Santoso" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bukaBlue-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp <span class="text-red-500">*</span></label>
+                    <input type="tel" id="modal-phone" required placeholder="Contoh: 08123456789" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-bukaBlue-500">
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold py-3 rounded-xl shadow transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Mulai Chat WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Action Button -->
+    <a href="https://wa.me/6281586868187?text=Halo%20BukaOffice,%20saya%20ingin%20konsultasi%20layanan%20usaha" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold p-3.5 rounded-full shadow-2xl flex items-center gap-2.5 transition-all transform hover:scale-105 group border-2 border-white">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap text-xs font-bold pr-1">Konsultasi WA 24 Jam</span>
+    </a>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // KBLI Modal Controls
+        function openKbliModal() {
+            document.getElementById('kbli-modal').classList.remove('hidden');
+        }
+
+        function closeKbliModal() {
+            document.getElementById('kbli-modal').classList.add('hidden');
+        }
+
+        function filterKbliCodes() {
+            const query = document.getElementById('kbli-search-input').value.toLowerCase();
+            const items = document.querySelectorAll('.kbli-item');
+            
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function selectKbliItem(kbliName) {
+            closeKbliModal();
+            openConsultModal(`Konsultasi KBLI: ${kbliName}`);
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(num) {
+            const ans = document.getElementById(`faq-ans-${num}`);
+            const icon = document.getElementById(`faq-icon-${num}`);
+            
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                ans.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Consult / Order Modal Functions
+        function openConsultModal(serviceName) {
+            document.getElementById('modal-service').value = serviceName || 'Konsultasi Layanan BukaOffice';
+            document.getElementById('consult-modal').classList.remove('hidden');
+        }
+
+        function closeConsultModal() {
+            document.getElementById('consult-modal').classList.add('hidden');
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('modal-name').value;
+            const phone = document.getElementById('modal-phone').value;
+            const service = document.getElementById('modal-service').value;
+
+            const waText = encodeURIComponent(`Halo BukaOffice,\nSaya mau pesan/konsultasi:\n*${service}*\n\n*Nama:* ${name}\n*No WA:* ${phone}`);
+            window.open(`https://wa.me/6281586868187?text=${waText}`, '_blank');
+            closeConsultModal();
+        }
+
+        // Direct Contact Section Form Submission
+        function handleDirectContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const phone = document.getElementById('contact-phone').value;
+            const service = document.getElementById('contact-service').value;
+            const message = document.getElementById('contact-message').value;
+
+            const waText = encodeURIComponent(`Halo BukaOffice,\nSaya menghubungi via Form Website:\n\n*Nama:* ${name}\n*No WA:* ${phone}\n*Layanan:* ${service}\n*Pesan:* ${message}`);
+            window.open(`https://wa.me/6281586868187?text=${waText}`, '_blank');
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
